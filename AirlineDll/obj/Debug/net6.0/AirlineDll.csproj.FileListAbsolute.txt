@@ -1,0 +1,14 @@
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\bin\Debug\net6.0\AirlineDll.deps.json
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\bin\Debug\net6.0\AirlineDll.runtimeconfig.json
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\bin\Debug\net6.0\AirlineDll.dll
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\bin\Debug\net6.0\AirlineDll.pdb
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.csproj.AssemblyReference.cache
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.AssemblyInfoInputs.cache
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.AssemblyInfo.cs
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.csproj.CoreCompileInputs.cache
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.dll
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\refint\AirlineDll.dll
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.pdb
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\AirlineDll.genruntimeconfig.cache
+C:\Users\MICROBYTE COMPUTERS\source\repos\AirlineAssignment\AirlineDll\obj\Debug\net6.0\ref\AirlineDll.dll

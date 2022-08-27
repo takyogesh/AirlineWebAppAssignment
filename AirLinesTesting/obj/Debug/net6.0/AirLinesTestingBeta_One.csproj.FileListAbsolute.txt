@@ -1,0 +1,6 @@
+D:\Project\AirLineWebApp-Assignment\AirLinesTestingBeta_One\bin\Debug\net6.0\CoverletSourceRootsMapping
+D:\Project\AirLineWebApp-Assignment\AirLinesTestingBeta_One\obj\Debug\net6.0\AirLinesTestingBeta_One.csproj.AssemblyReference.cache
+D:\Project\AirLineWebApp-Assignment\AirLinesTestingBeta_One\obj\Debug\net6.0\AirLinesTestingBeta_One.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\AirLineWebApp-Assignment\AirLinesTestingBeta_One\obj\Debug\net6.0\AirLinesTestingBeta_One.AssemblyInfoInputs.cache
+D:\Project\AirLineWebApp-Assignment\AirLinesTestingBeta_One\obj\Debug\net6.0\AirLinesTestingBeta_One.AssemblyInfo.cs
+D:\Project\AirLineWebApp-Assignment\AirLinesTestingBeta_One\obj\Debug\net6.0\AirLinesTestingBeta_One.csproj.CoreCompileInputs.cache

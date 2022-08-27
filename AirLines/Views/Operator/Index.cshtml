@@ -1,0 +1,32 @@
+﻿@model IEnumerable<AirLines.Models.AirlineViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@await Html.PartialAsync("_Operator.cshtml",Model)
+
+<script>
+$(document).ready(function(){ 
+  $('button').click(function(){
+       var delid = $(this).val();
+ 
+ 
+       if(confirm("Do you really want to delete record?")){
+         // AJAX Request
+         console.log("i m inside");
+         $.ajax({
+           type: 'DELETE',
+           url: 'https://localhost:7087/AirLines/DeleteAirlines?id='+delid,
+           success: function(response){
+               location.reload(true);
+             
+           }
+      });
+  }
+       
+ });
+ 
+ 
+});
+</script>
