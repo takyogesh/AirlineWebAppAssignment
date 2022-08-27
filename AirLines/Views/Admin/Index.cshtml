@@ -6,7 +6,7 @@
 }
 
 <h1>Update user Status</h1>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -42,7 +42,7 @@
             console.log(status);
             $.ajax({
                 type:"POST",
-                url:"https://localhost:7289/Admin/Edit",
+                url:"https://localhost:7421/Admin/Edit",
                 data:{"email":email,"status":status},
                 success:function(response){
                     location.reload(true);

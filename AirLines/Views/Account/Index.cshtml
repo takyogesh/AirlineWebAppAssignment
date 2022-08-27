@@ -69,7 +69,7 @@
             var email=$(this).val();
             $.ajax({
             type:"POST",
-            url:"https://localhost:7289/Account/IsEmailExsist",
+            url:"https://localhost:7421/Account/IsEmailExsist",
             data:{"email":email},
             success:function(response)
             {

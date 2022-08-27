@@ -9760,11 +9760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\AirLineWebApp-Assignment\\AirLines\\AirLines.csproj",
+      "projectUniqueName": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\AirLines.csproj",
       "projectName": "AirLines",
-      "projectPath": "D:\\Project\\AirLineWebApp-Assignment\\AirLines\\AirLines.csproj",
+      "projectPath": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\AirLines.csproj",
       "packagesPath": "C:\\Users\\MICROBYTE COMPUTERS\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\AirLineWebApp-Assignment\\AirLines\\obj\\",
+      "outputPath": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MICROBYTE COMPUTERS\\AppData\\Roaming\\NuGet\\NuGet.Config",

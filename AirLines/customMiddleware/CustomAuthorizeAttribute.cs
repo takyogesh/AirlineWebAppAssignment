@@ -1,6 +1,4 @@
-﻿using AirLines.Data;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace AirLines.customMiddleware
 {
@@ -8,58 +6,34 @@ namespace AirLines.customMiddleware
     public class CustomAuthorizeAttribute : Attribute, IAuthorizationFilter
     {
         private readonly  string allowedroles;
-        
-
         public CustomAuthorizeAttribute(string roles)
         {
             this.allowedroles = roles;
-          
         }
-        
-
-
-
-        public void OnAuthorization(AuthorizationFilterContext httpcontext)
+        public void OnAuthorization(AuthorizationFilterContext context)
         {
 
-            if (string.IsNullOrWhiteSpace(httpcontext.HttpContext.Session.GetString("Name")))
+            if (string.IsNullOrWhiteSpace(context.HttpContext.Session.GetString("Name")))
             {
-                httpcontext.HttpContext.Response.Redirect("Account/Index");
+                context.HttpContext.Response.Redirect("Account/Index");
             }
             else
             {
                
-                var role = httpcontext.HttpContext.Session.GetString("role");
+                var role = context.HttpContext.Session.GetString("role");
                 
                 if (role != null)
                 {
-                    if (allowedroles == role)
+                    if (allowedroles != role)
                     {
-                        if (allowedroles == "Admin" && role == "Admin")
-                        {
-                            //httpcontext.HttpContext.Response.Redirect("/Admin/Index");
-                            //redi
-                        }
-                        else if (allowedroles == "Operator" && role == "Operator")
-                        {
-                            //httpcontext.HttpContext.Response.Redirect("/Operator/Index");
-                        }
+                       context.HttpContext.Response.Redirect("Account/ErrorPage");
                     }
-                    else
-                    {
-                        httpcontext.HttpContext.Response.Redirect("Account/ErrorPage");
-
-                    }
-
-
                 }
                 else
                 {
-                    httpcontext.HttpContext.Response.Redirect("Account/login");
+                    context.HttpContext.Response.Redirect("Account/login");
                 }
             }
-            
-            
         }
     }
 }

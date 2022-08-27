@@ -10,14 +10,12 @@
 $(document).ready(function(){ 
   $('button').click(function(){
        var delid = $(this).val();
- 
- 
        if(confirm("Do you really want to delete record?")){
          // AJAX Request
-         console.log("i m inside");
+         console.log("in ajax delete");
          $.ajax({
            type: 'DELETE',
-           url: 'https://localhost:7087/AirLines/DeleteAirlines?id='+delid,
+           url: 'https://localhost:7421/Operator/Delete?id='+delid,
            success: function(response){
                location.reload(true);
              

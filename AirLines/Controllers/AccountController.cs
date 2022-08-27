@@ -11,8 +11,6 @@ namespace AirLines.Controllers
     public class AccountController : Controller
     {
         private readonly AirLineDbContext _context;
-        
-
         public AccountController(AirLineDbContext context)
         {
             _context = context;
@@ -22,13 +20,11 @@ namespace AirLines.Controllers
             if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Name")))
             {
                 return RedirectToAction("Index", "Home");
-               
             }
             else
             {
                 return View();
             }
-            
         }
         [HttpPost]
         public async Task<IActionResult> IsEmailExsist(string email)
@@ -40,10 +36,8 @@ namespace AirLines.Controllers
                     {
                         return Ok("Exist");
                     }
-                
             }
             return Ok("NotExist");
-
         }
         [HttpPost]
         public IActionResult Create(User user)
@@ -57,18 +51,17 @@ namespace AirLines.Controllers
             {
                 _context.User!.Add(user);
                 _context.SaveChanges();
-                var whatrole = _context.Role!.FirstOrDefault(r => r.Id == user.RoleId);
-                if (whatrole != null)
+                var role = _context.Role!.FirstOrDefault(r => r.Id == user.RoleId);
+                if (role != null)
                 {
                     bool send=EmailSend(user.Email!);
-                    if (whatrole.Name == "Admin")
+                    if (role.Name == "Admin")
                     {
                         return RedirectToAction("Login");
                     }
-                    else if (whatrole.Name == "Operator")
+                    else if (role.Name == "Operator")
                     {
                         return RedirectToAction("Login");
-
                     }
                 }
                 return RedirectToAction(nameof(Index));
@@ -85,12 +78,12 @@ namespace AirLines.Controllers
                 var rol=_context.Role!.FirstAsync(r => r.Id==Isuser.RoleId).Result;
                 HttpContext.Session.SetInt32("RoleId", Isuser.RoleId);
                 HttpContext.Session.SetString("role", rol.Name!);
-                var whatrole =await _context.Role!.FirstOrDefaultAsync(r => r.Id == Isuser.RoleId);
-                if (whatrole!.Name == "Admin")
+                var role =await _context.Role!.FirstOrDefaultAsync(r => r.Id == Isuser.RoleId);
+                if (role!.Name == "Admin")
                 {
                     return RedirectToAction("Index", "Home", new { area = "Home" });
                 }
-                else if(whatrole!.Name == "Operator")
+                else if(role!.Name == "Operator")
                 {
                     return RedirectToAction("Index", "Home", new { area = "Home" });
                 }
@@ -114,13 +107,12 @@ namespace AirLines.Controllers
                 return View();
             }
         }
-        
         private static bool EmailSend(string username)
         {
             string from = "ytak989@gmail.com";
             string password = "cvgcycykgkauawnk";
             string subject = "Welcome  Dear Customer";
-            string body = $"{username}\n<h1>Thank you for the registration. Please login using the url"+"'<a href=\"https://localhost:7289/Account/\" </h1>\n'";
+            string body = $"{username}\n<h1>Thank you for the registration. Please login using the url"+ "'<a href=\"https://localhost:7421/Account/Login\" </h1>\n'";
             try
             {
                 MailMessage message = new MailMessage();
@@ -145,14 +137,12 @@ namespace AirLines.Controllers
                 return false;
             }
         }
-        
         [AllowAnonymous]
         [HttpGet]
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction(nameof(Login));
-
         }
         public IActionResult ErrorPage()
         {
