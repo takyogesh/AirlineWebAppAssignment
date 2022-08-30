@@ -9760,9 +9760,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\AirLines.csproj",
-      "projectName": "AirLines",
-      "projectPath": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\AirLines.csproj",
+      "projectUniqueName": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\AirlineWebApp.csproj",
+      "projectName": "AirlineWebApp",
+      "projectPath": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\AirlineWebApp.csproj",
       "packagesPath": "C:\\Users\\MICROBYTE COMPUTERS\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\MICROBYTE COMPUTERS\\source\\repos\\AirlineAssignment\\AirLines\\obj\\",
       "projectStyle": "PackageReference",

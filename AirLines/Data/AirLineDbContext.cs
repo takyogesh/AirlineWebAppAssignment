@@ -1,7 +1,7 @@
-﻿using AirLines.Models;
+﻿using AirlineWebApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AirLines.Data
+namespace AirlineWebApp.Data
 {
     public class AirLineDbContext:DbContext
     {

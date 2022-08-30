@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace AirLines.Data.Migrations
+namespace AirlineWebApp.Data.Migrations
 {
     public partial class initial : Migration
     {

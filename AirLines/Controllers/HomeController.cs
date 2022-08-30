@@ -1,11 +1,11 @@
-﻿using AirLines.customMiddleware;
-using AirLines.Data;
-using AirLines.Models;
+﻿using AirlineWebApp.customMiddleware;
+using AirlineWebApp.Data;
+using AirlineWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Polly;
 using System.Diagnostics;
 
-namespace AirLines.Controllers
+namespace AirlineWebApp.Controllers
 {
     
     public class HomeController : Controller
@@ -14,7 +14,7 @@ namespace AirLines.Controllers
 
         public IActionResult Index()
         {
-            ViewData["UserName"] = HttpContext.Session.GetString("Name");
+            ViewData["uName"] = HttpContext.Session.GetString("Name");
             return View();
         }
         

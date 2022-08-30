@@ -1,8 +1,8 @@
-﻿using AirLines.ApiModel;
-using AirLines.Models;
+﻿using AirlineWebApp.ApiModel;
+using AirlineWebApp.Models;
 using AutoMapper;
 
-namespace AirLines.Mapper
+namespace AirlineWebApp.Mapper
 {
     public class MapperProfile:Profile
     {

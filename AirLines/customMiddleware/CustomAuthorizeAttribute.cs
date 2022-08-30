@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace AirLines.customMiddleware
+namespace AirlineWebApp.customMiddleware
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Enum | AttributeTargets.Interface | AttributeTargets.Delegate| AttributeTargets.All)]
     public class CustomAuthorizeAttribute : Attribute, IAuthorizationFilter

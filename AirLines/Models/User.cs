@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AirLines.Models
+namespace AirlineWebApp.Models
 {
     public class User
     {

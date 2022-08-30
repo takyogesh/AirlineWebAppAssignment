@@ -1,6 +1,6 @@
-﻿using AirLines.ApiModel;
-using AirLines.customMiddleware;
-using AirLines.Models;
+﻿using AirlineWebApp.ApiModel;
+using AirlineWebApp.customMiddleware;
+using AirlineWebApp.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -10,7 +10,7 @@ namespace Airlines.Controllers
     public class OperatorController : Controller
     {
         private readonly IMapper _mapper;
-        Uri baseAddress = new Uri("https://localhost:7087/");
+        readonly Uri baseAddress = new Uri("https://localhost:7087/");
         private readonly HttpClient client;
         [CustomAuthorize("Operator")]
         public OperatorController(IMapper mapper)
@@ -24,7 +24,7 @@ namespace Airlines.Controllers
         [CustomAuthorize("Operator")]
         public IActionResult Index()
         {
-            ViewData["UserName"] = HttpContext.Session.GetString("Name");
+            ViewData["uName"] = HttpContext.Session.GetString("Name");
             HttpResponseMessage response = client.GetAsync(baseAddress + "Airlines/GetAirlines").Result;
             if (response.IsSuccessStatusCode)
             {
@@ -40,7 +40,7 @@ namespace Airlines.Controllers
         //// GET: Operator/Create
         public IActionResult Create()
         {
-            ViewData["UserName"] = HttpContext.Session.GetString("Name");
+            ViewData["uName"] = HttpContext.Session.GetString("Name");
             return View();
         }
         [CustomAuthorize("Operator")]
@@ -61,7 +61,7 @@ namespace Airlines.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            ViewData["UserName"] = HttpContext.Session.GetString("Name");
+            ViewData["uName"] = HttpContext.Session.GetString("Name");
             return View(model);
         }
 
@@ -79,10 +79,9 @@ namespace Airlines.Controllers
             {
                 string data = response.Content.ReadAsStringAsync().Result;
 
-                string stringData = response.Content.ReadAsStringAsync().Result;
-                AirLineApiModel model = JsonConvert.DeserializeObject<AirLineApiModel>(stringData)!;
+                AirLineApiModel model = JsonConvert.DeserializeObject<AirLineApiModel>(data)!;
                 var airlines = _mapper.Map<AirlineViewModel>(model);
-                ViewData["UserName"] = HttpContext.Session.GetString("Name");
+                ViewData["uName"] = HttpContext.Session.GetString("Name");
                 return View(airlines);
             }
             return View();
@@ -103,7 +102,7 @@ namespace Airlines.Controllers
                     HttpResponseMessage response = client.PutAsync(baseAddress + "Airlines/UpdateAirLines", contentData).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        ViewData["UserName"] = HttpContext.Session.GetString("Name");
+                        ViewData["uName"] = HttpContext.Session.GetString("Name");
                         return RedirectToAction(nameof(Index));
                     }
                     else
@@ -112,7 +111,7 @@ namespace Airlines.Controllers
                 else
                     return NoContent();
             }
-            ViewData["UserName"] = HttpContext.Session.GetString("Name");
+            ViewData["uName"] = HttpContext.Session.GetString("Name");
             return View(model);
         }
         public ActionResult Delete(int id)

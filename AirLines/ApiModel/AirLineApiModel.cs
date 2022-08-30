@@ -1,4 +1,4 @@
-﻿namespace AirLines.ApiModel
+﻿namespace AirlineWebApp.ApiModel
 {
     public class AirLineApiModel
     {

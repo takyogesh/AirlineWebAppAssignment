@@ -1,12 +1,12 @@
-﻿using AirLines.Data;
-using AirLines.Models;
+﻿using AirlineWebApp.Data;
+using AirlineWebApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Mail;
 
-namespace AirLines.Controllers
+namespace AirlineWebApp.Controllers
 {
     public class AccountController : Controller
     {
@@ -66,7 +66,18 @@ namespace AirLines.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Name")))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public async Task<IActionResult> Login(string Email,string password)
@@ -95,30 +106,21 @@ namespace AirLines.Controllers
             }
             return View();
         }
-        [HttpGet]
-        public IActionResult Login()
-        {
-            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Name")))
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                return View();
-            }
-        }
-        private static bool EmailSend(string username)
+       
+        private static bool EmailSend(string userName)
         {
             string from = "ytak989@gmail.com";
             string password = "cvgcycykgkauawnk";
             string subject = "Welcome  Dear Customer";
-            string body = $"{username}\n<h1>Thank you for the registration. Please login using the url"+ "'<a href=\"https://localhost:7421/Account/Login\" </h1>\n'";
+            string body = $"{userName}\n<h1>Thank you for the registration. Please login using the url"+ "'<a href=\"https://localhost:7421/Account/Login\" </h1>\n'";
             try
             {
+#pragma warning disable IDE0090 // Use 'new(...)'
                 MailMessage message = new MailMessage();
+#pragma warning restore IDE0090 // Use 'new(...)'
                 SmtpClient smtp = new SmtpClient();
                 message.From = new MailAddress(from);
-                message.To.Add(new MailAddress(username));
+                message.To.Add(new MailAddress(userName));
                 message.Subject = subject;
                 message.IsBodyHtml = true; //to make message body as html  
                 message.Body = body;

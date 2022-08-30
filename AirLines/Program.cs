@@ -1,6 +1,6 @@
 
-using AirLines.customMiddleware;
-using AirLines.Data;
+using AirlineWebApp.customMiddleware;
+using AirlineWebApp.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

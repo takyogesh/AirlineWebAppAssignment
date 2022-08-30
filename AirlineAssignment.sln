@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineDll", "AirlineDll\Ai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirLineWebApi", "AirLineWebApi\AirLineWebApi.csproj", "{93D42CF5-AD28-42C8-BD8D-0A225C1703DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirLines", "AirLines\AirLines.csproj", "{DC9758A8-B777-40A2-89C6-93B7DE5213FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineWebApp", "AirLines\AirlineWebApp.csproj", "{DC9758A8-B777-40A2-89C6-93B7DE5213FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

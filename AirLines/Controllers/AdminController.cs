@@ -1,9 +1,9 @@
-﻿using AirLines.customMiddleware;
-using AirLines.Data;
+﻿using AirlineWebApp.customMiddleware;
+using AirlineWebApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace AirLines.Controllers
+namespace AirlineWebApp.Controllers
 {
     public class AdminController : Controller
     {
@@ -16,10 +16,10 @@ namespace AirLines.Controllers
         [CustomAuthorize("Admin")]
         public async Task<IActionResult> Index()
         {
-            ViewData["UserName"] = HttpContext.Session.GetString("Name");
+            ViewData["uName"] = HttpContext.Session.GetString("Name");
               return _context.User != null ? 
                           View(await _context.User.Where(u=>u.Status=="Pending").ToListAsync()) :
-                          Problem("Entity set 'AirLinesContext.User'  is null.");
+                          Problem("Entity set User  is null.");
         }
         [CustomAuthorize("Admin")]
         [HttpPost]
